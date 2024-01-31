@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shopping_app/providers/products.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
   static const routeName = '/product-details';
@@ -6,13 +8,18 @@ class ProductDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String productId =
-        ModalRoute.of(context)?.settings.arguments as String;
+    final productId = ModalRoute.of(context)?.settings.arguments as String;
+    final product =
+        Provider.of<Prodcuts>(context, listen: false).findByID(productId);
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).primaryColor,
+        foregroundColor: Colors.white,
+      ),
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        child: const Text('data'),
+        child: Image.network(product.images),
       ),
     );
   }

@@ -1,11 +1,13 @@
-class Product {
+import 'package:flutter/material.dart';
+
+class Product with ChangeNotifier {
   final String id;
   final String title;
   final double price;
   final int quantity;
   final String description;
   final String images;
-  final bool isFavorite;
+  bool isFavorite;
   Product({
     required this.id,
     required this.title,
@@ -15,7 +17,14 @@ class Product {
     required this.images,
     this.isFavorite = false,
   });
+
+  void toggleFavorietStatus() {
+    isFavorite = !isFavorite;
+    notifyListeners();
+  }
 }
+
+
   // final DateTime dateTime;
   // final Function onSelectProduct;
   // final Function onRemoveFromCart;

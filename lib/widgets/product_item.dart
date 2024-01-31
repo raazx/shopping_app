@@ -1,34 +1,43 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shopping_app/providers/product.dart';
 import 'package:shopping_app/screens/product_details_screen.dart';
 
 class ProductItem extends StatelessWidget {
-  final String productID;
-  final String productTitle;
-
-  final String productImageUrl;
-  final String productDescriptin;
-  final double price;
+  // final Product product;
 
   const ProductItem({
     super.key,
-    required this.productID,
-    required this.productTitle,
-    required this.productImageUrl,
-    required this.price,
-    required this.productDescriptin,
+    // required this.product,
   });
 
   @override
   Widget build(BuildContext context) {
+    final product = Provider.of<Product>(context, listen: false);
     return ClipRRect(
       borderRadius: BorderRadius.circular(15),
       child: GridTile(
         footer: GridTileBar(
           backgroundColor: Colors.black54,
-          leading: const Icon(Icons.favorite),
+          leading: Consumer<Product>(
+            builder: (context, value, child) => IconButton(
+                onPressed: () {
+                  value.toggleFavorietStatus();
+                },
+                icon: product.isFavorite
+                    ? const Icon(
+                        Icons.favorite,
+                        color: Colors.redAccent,
+                      )
+                    : const Icon(
+                        Icons.favorite,
+                        color: Colors.white,
+                      )),
+            child: Text('d'),
+          ),
           trailing: const Icon(Icons.shopping_cart),
           title: Text(
-            productTitle,
+            product.title,
             textAlign: TextAlign.center,
             style: TextStyle(
               color: Theme.of(context).primaryColor,
@@ -38,10 +47,10 @@ class ProductItem extends StatelessWidget {
         child: GestureDetector(
           onTap: () {
             Navigator.pushNamed(context, ProductDetailsScreen.routeName,
-                arguments: {'id': productID});
+                arguments: product.id);
           },
           child: Image.network(
-            productImageUrl,
+            product.images,
             fit: BoxFit.cover,
             width: double.infinity,
           ),
