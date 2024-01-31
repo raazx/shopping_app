@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/screens/product_overview_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,13 +27,6 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('myshop'),
-      ),
-      body: const Center(
-        child: Text('data'),
-      ),
-    );
+    return ProductOverviewScreen();
   }
 }
