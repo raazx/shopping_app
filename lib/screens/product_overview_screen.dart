@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/models/product.dart';
-import 'package:shopping_app/screens/product_item.dart';
+import 'package:shopping_app/widgets/product_item.dart';
 
 class ProductOverviewScreen extends StatelessWidget {
+  static const routeName = '/overview';
+
   ProductOverviewScreen({super.key});
   final List<Product> loadedProduct = [
     Product(
@@ -32,6 +34,15 @@ class ProductOverviewScreen extends StatelessWidget {
       images:
           'https://assets.hermes.com/is/image/hermesproduct/mille-et-un-lapins-scarf-90--004007S%2004-worn-3-0-0-800-800_g.jpg',
     ),
+    Product(
+      id: 'p4',
+      title: 'Tefal',
+      price: 262.60,
+      quantity: 7,
+      description: 'Tefal One-Pick-Pot Pan (Beige) | TEFAL',
+      images:
+          'https://www.theindusvalley.in/cdn/shop/files/fryingpanstainlesssteel_47304149-9609-410c-b4b6-d1ea2b0f5577.webp?v=1702106199',
+    ),
   ];
 
   @override
@@ -42,9 +53,10 @@ class ProductOverviewScreen extends StatelessWidget {
         padding: const EdgeInsets.all(2),
         itemCount: loadedProduct.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 1,
-          childAspectRatio: 0.7,
-        ),
+            crossAxisCount: 2,
+            childAspectRatio: 0.7,
+            crossAxisSpacing: 5,
+            mainAxisSpacing: 5),
         itemBuilder: (BuildContext ctxt, int index) => ProductItem(
           productImageUrl: loadedProduct[index].images,
           price: loadedProduct[index].price,
