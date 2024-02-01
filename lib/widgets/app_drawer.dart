@@ -14,9 +14,6 @@ class Appdrawer extends StatelessWidget {
             title: const Text('Hello friend'),
             automaticallyImplyLeading: false,
           ),
-          DrawerHeader(
-            child: const Text('Hello friend'),
-          ),
           const Divider(),
           ListTile(
             leading: const Icon(Icons.shop),
