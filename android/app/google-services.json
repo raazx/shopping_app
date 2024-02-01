@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1059099479328",
+    "project_id": "shop060p",
+    "storage_bucket": "shop060p.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1059099479328:android:d3a58320d6b2fd3fe71b45",
+        "android_client_info": {
+          "package_name": "com.example.shopping_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAitgRS2h8DlUroNvkYvrxxCH4N2g62Mfc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

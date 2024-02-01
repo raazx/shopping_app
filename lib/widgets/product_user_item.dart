@@ -12,9 +12,9 @@ class ProductUserItem extends StatelessWidget {
     return ListTile(
       title: Text(product.title),
       leading: CircleAvatar(
-        backgroundImage: AssetImage(product.imageUrl),
+        backgroundImage: NetworkImage(product.imageUrl),
       ),
-      trailing: Container(
+      trailing: SizedBox(
         width: 100,
         child: Row(
           children: [

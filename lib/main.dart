@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shopping_app/providers/cart.dart';
@@ -9,6 +10,12 @@ import 'package:shopping_app/screens/orders_screen.dart';
 import 'package:shopping_app/screens/product_details_screen.dart';
 import 'package:shopping_app/screens/product_overview_screen.dart';
 import 'package:shopping_app/screens/user_product_screen.dart';
+import 'firebase_options.dart';
+
+// Platform  Firebase App Id
+// web       1:1059099479328:web:fca7e14cca233331e71b45
+// android   1:1059099479328:android:d3a58320d6b2fd3fe71b45
+// ios       1:1059099479328:ios:67e444ea6a9fa874e71b45
 
 var kColorScheme = ColorScheme.fromSeed(
   seedColor: Colors.green,
@@ -19,7 +26,11 @@ var kDarkColorScheme = ColorScheme.fromSeed(
   seedColor: const Color.fromARGB(255, 5, 99, 125),
 );
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -37,6 +48,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Myshop',
+        debugShowCheckedModeBanner: false,
         darkTheme: ThemeData.dark().copyWith(
           colorScheme: kDarkColorScheme,
           cardTheme: const CardTheme().copyWith(
@@ -54,7 +66,6 @@ class MyApp extends StatelessWidget {
           ),
         ),
         theme: ThemeData().copyWith(
-          useMaterial3: true,
           colorScheme: kColorScheme,
           appBarTheme: const AppBarTheme().copyWith(
             backgroundColor: kColorScheme.onPrimaryContainer,

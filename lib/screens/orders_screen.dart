@@ -18,8 +18,19 @@ class OrdersScreen extends StatelessWidget {
       drawer: const Appdrawer(),
       body: ListView.builder(
         itemCount: orderData.orders.length,
-        itemBuilder: (context, index) =>
+        itemBuilder: (context, index) => Column(
+          children: [
+            Card(
+              margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+              elevation: 5,
+              color: Colors.amber,
+              child: Text(
+                orderData.orders[index].id,
+              ),
+            ),
             OrderItems(order: orderData.orders[index]),
+          ],
+        ),
       ),
     );
   }

@@ -48,7 +48,7 @@ class _EditProdutScreenState extends State<EditProdutScreen> {
     if (_isIniti) {
       Product? existProduct =
           ModalRoute.of(context)!.settings.arguments as Product;
-      if (!existProduct.title.isEmpty) {
+      if (existProduct.title.isNotEmpty) {
         _isEdit = true;
         _editProduct = existProduct;
         _initValues = {
@@ -84,7 +84,6 @@ class _EditProdutScreenState extends State<EditProdutScreen> {
 
   void _saveform() {
     final isValed = _form.currentState!.validate();
-    print(isValed);
     if (!isValed) {
       return;
     }

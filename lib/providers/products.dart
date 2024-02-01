@@ -100,7 +100,6 @@ class Prodcuts with ChangeNotifier {
         price: product.price,
         imageUrl: product.imageUrl);
     _items.add(newProduct);
-    print(product.id);
     notifyListeners();
   }
 

@@ -16,14 +16,16 @@ class ProductItem extends StatelessWidget {
       child: GridTile(
         footer: GridTileBar(
           backgroundColor: Colors.black45,
-          leading: IconButton(
-              onPressed: () {
-                product.toggleFavorietStatus();
-              },
-              icon: Icon(
-                product.isFavorite ? Icons.favorite : Icons.favorite_border,
-                color: Colors.redAccent,
-              )),
+          leading: Consumer<Product>(
+            builder: (context, value, child) => IconButton(
+                onPressed: () {
+                  value.toggleFavorietStatus();
+                },
+                icon: Icon(
+                  value.isFavorite ? Icons.favorite : Icons.favorite_border,
+                  color: Colors.redAccent,
+                )),
+          ),
           trailing: IconButton(
               onPressed: () {
                 cart.addItem(product.id, product.title, product.price);
