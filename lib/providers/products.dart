@@ -37,35 +37,39 @@ class Prodcuts with ChangeNotifier {
     ),
     Product(
       id: 'p5',
-      title: "حله محشي",
+      title: "Voodoo",
       description:
           "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
       price: 49.99,
-      imageUrl: "assets/images/1.png",
+      imageUrl:
+          "https://shop.amilaholdings.com/image/cache/data/Cosmatics/70-500x500.JPG",
     ),
     Product(
       id: 'p6',
-      title: "حله محشي",
+      title: "Best Shoe Stores in San Diego",
       description:
           "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
       price: 15,
-      imageUrl: "assets/images/2.jpeg",
+      imageUrl:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV93_dW3a5DCy9FuN3dn44YrubouRo06So8A&usqp=CAU",
     ),
     Product(
       id: 'p7',
-      title: "taied ",
+      title: "Wedding Bands ",
       description:
           "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
       price: 49.99,
-      imageUrl: "assets/images/3.png",
+      imageUrl:
+          "https://one2threejewelry.com/cdn/shop/files/WeddingBandwithMoissanite_800x.jpg?v=1699004433",
     ),
     Product(
       id: 'p8',
-      title: " head phone pets",
+      title: " Strawberries",
       description:
           "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
       price: 49.99,
-      imageUrl: "assets/images/4.png",
+      imageUrl:
+          "https://www.melissas.com/cdn/shop/products/image-of-strawberries-fruit-14764295127084_600x600.jpg?v=1616979635",
     ),
   ];
 

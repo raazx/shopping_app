@@ -80,7 +80,7 @@ class MyApp extends StatelessWidget {
         ),
         home: const MyHomePage(),
         routes: {
-          ProductDetailsScreen.routeName: (ctx) => const ProductDetailsScreen(),
+          ProductDetailsScreen.rountName: (ctx) => const ProductDetailsScreen(),
           CartScreen.routName: (ctx) => const CartScreen(),
           OrdersScreen.routName: (ctx) => const OrdersScreen(),
           UserProductScreen.routName: (ctx) => const UserProductScreen(),
