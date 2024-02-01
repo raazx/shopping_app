@@ -9,7 +9,7 @@ class ProductGridview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final providerData = Provider.of<Prodcuts>(context);
-    final products = showitems ? providerData.items : providerData.fasItems;
+    final products = showitems ? providerData.fasItems : providerData.items;
     return GridView.builder(
       padding: const EdgeInsets.all(2),
       itemCount: products.length,

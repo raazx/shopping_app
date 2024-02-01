@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shopping_app/providers/cart.dart';
 import 'package:shopping_app/providers/product.dart';
 import 'package:shopping_app/screens/product_details_screen.dart';
 
@@ -33,9 +34,22 @@ class ProductItem extends StatelessWidget {
                         Icons.favorite,
                         color: Colors.white,
                       )),
-            child: Text('d'),
           ),
-          trailing: const Icon(Icons.shopping_cart),
+          trailing: Consumer<Cart>(
+            builder: (context, value, child) => IconButton(
+                onPressed: () {
+                  value.addItem(product.id, product.title, product.price);
+                },
+                icon: product.isFavorite
+                    ? const Icon(
+                        Icons.shopping_cart_checkout,
+                        color: Colors.redAccent,
+                      )
+                    : const Icon(
+                        Icons.shopping_cart,
+                        color: Colors.white,
+                      )),
+          ),
           title: Text(
             product.title,
             textAlign: TextAlign.center,
